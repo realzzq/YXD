@@ -141,7 +141,7 @@ class QuickYxd {
             throw new RuntimeException("已经刷完了，不需要在刷了，老铁");
         }
         printTip(loginAndAnswer,"数学171","登录成功...\n正在搜寻正确答案中...","登录失败！请联系q256598791解决");
-        String webUrl = BasicUrl + Jsoup.parse(loginAndAnswer,".dotted_box a").attr("href");
+        String webUrl = BasicUrl + Jsoup.parse(loginAndAnswer).select(".dotted_box a").attr("href");
         //分割URL，获得参数
         splitUrl(webUrl);
         //以questionSave开头的
